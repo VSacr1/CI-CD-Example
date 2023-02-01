@@ -30,7 +30,9 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo "username=Development user" >> $GITHUB_ENV
-             echo Logging in as $username.
+       
+      - name: Run login 
+        run: echo Logging in as $username.
         
   Actions_with_username:
     # The type of runner that the job will run on
