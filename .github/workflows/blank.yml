@@ -9,14 +9,19 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
-
-  # Allows you to run this workflow manually from the Actions tab
+    
   workflow_dispatch:
+  
+env: 
+  username: Test User
+  # Allows you to run this workflow manually from the Actions tab
+
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  
   # This workflow contains a single job called "build"
-  Actions_Username:
+  build_master:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -25,13 +30,13 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Logging in as username.
+        run: echo Logging in as $username.
         
   Actions_with_username:
     # The type of runner that the job will run on
     
     runs-on: ubuntu-latest
-    needs: Actions_Username
+    needs: build_master
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
