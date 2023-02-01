@@ -15,8 +15,7 @@ on:
 env: 
   username: Test User
   # Allows you to run this workflow manually from the Actions tab
-
-
+  
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   
@@ -30,7 +29,8 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Logging in as $username.
+        run: echo "username=Development user" >> $GITHUB_ENV
+             echo Logging in as $username.
         
   Actions_with_username:
     # The type of runner that the job will run on
