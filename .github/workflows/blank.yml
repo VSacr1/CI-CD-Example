@@ -27,12 +27,12 @@ jobs:
 
 
 
-  Run-hello-world2-on-debian: 
-    runs-on: debian-latest
+  Run-hello-world2-on-ubuntu: 
+    runs-on: ubuntu-latest
     
         # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
       # Runs a single command using the runners shell
       - name: Hello World
-        run: echo Hello World 
+        run: echo Hello World from second runner
