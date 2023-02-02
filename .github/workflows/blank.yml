@@ -25,6 +25,16 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo ${{vars.EXAMPLEVARAIBLE}}
+        run: | 
+          using: docker
+          image: node:latest
+      
+      - name: Run app 
+        run: npm install pg 
+             node run.js
+
+
+
+
 
 
