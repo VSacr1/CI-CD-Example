@@ -14,9 +14,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  
-  # This workflow contains a single job called "build"
-  build_master:
+  Run-hello-world-on-ubuntu:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -24,15 +22,17 @@ jobs:
     steps:
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: docker run node:latest
-      
-      - name: Run app 
-        run: npm install pg 
-             node run.js
+      - name: Hello World
+        run: echo Hello World 
 
 
 
+  Run-hello-world2-on-debian: 
+    runs-on: debian-latest
+    
+        # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
 
-
-
+      # Runs a single command using the runners shell
+      - name: Hello World
+        run: echo Hello World 
