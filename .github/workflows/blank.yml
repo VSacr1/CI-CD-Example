@@ -35,4 +35,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Hello World
-        run: echo Hello World from second runner
+        run: echo Hello World from second job
