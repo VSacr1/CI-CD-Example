@@ -12,27 +12,55 @@ on:
     
   workflow_dispatch:
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  Run-hello-world-on-ubuntu:
-    # The type of runner that the job will run on
+  window-build:
+
     runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Building for windows
+        run: echo Building for windows
 
-      # Runs a single command using the runners shell
-      - name: Hello World
-        run: echo Hello World 
-
-
-
-  Run-hello-world2-on-ubuntu: 
+  Mac-build: 
     runs-on: ubuntu-latest
     
-        # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - name: Mac Build
+        run: echo Building for mac
 
-      # Runs a single command using the runners shell
-      - name: Hello World
-        run: echo Hello World from second job
+  window-test1:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Windows Test
+        run: echo Running Tests
+        
+  window-test2:
+  
+    runs-on: ubuntu-latest
+
+      steps:
+        - name: Windows Test
+          run: echo Running Tests
+
+  Mac-test1: 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Mac Test
+        run: echo Running Tests
+  
+  Mac-test2: 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Mac Test
+        run: echo Running Tests
+  
+  prod: 
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Deploy
+        run: echo deploying
